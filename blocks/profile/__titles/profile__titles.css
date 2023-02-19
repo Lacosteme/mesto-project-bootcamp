@@ -1,0 +1,14 @@
+.profile__titles {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  align-items: baseline;
+}
+@media screen and (max-width: 920px) {
+  .profile__titles {
+    row-gap: 14px;
+    align-items: center;
+    padding-left: 46px;
+    max-height: 54px;
+  }
+}
