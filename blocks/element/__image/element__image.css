@@ -1,4 +1,11 @@
 .element__image {
   width: 100%;
   display: block;
+  object-position: center;
+  object-fit: cover;
+  height: 282px;
+}
+
+.element__image:hover {
+  cursor: pointer;
 }

@@ -4,7 +4,9 @@
   font-weight: 500;
   color: #fff;
   margin: 0;
-  white-space: nowrap;
+  white-space: nowrap; 
+  text-overflow: ellipsis;
+  
 }
 
 @media screen and (max-width: 450px) {
