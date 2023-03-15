@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./pages/index.css" />
-    <script src="./scripts/index.js" defer></script>
+    <script type="module" src="./index.js" defer></script>
     <title>Место</title>
   </head>
   <body class="body">
@@ -41,24 +40,37 @@
       <div class="popup popup_type_edit-profile">
         <div class="popup__container popup__container_type_all">
           <button class="popup__close" type="submit"></button>
-          <form class="popup__form" name="prof" action="#" method="get">
+          <form
+            class="popup__form"
+            name="prof"
+            action="#"
+            method="get"
+            novalidate
+          >
             <h2 class="popup__form-title">Редактировать профиль</h2>
             <input
               class="popup__input popup__input_field_name"
               placeholder="Жак-Ив-Кусто"
               name="name"
               type="text"
-              id="name"
+              id="name-input"
+              minlength="2"
+              maxlength="40"
               required
             />
+            <span class="popup__error name-input-error"></span>
+
             <input
               class="popup__input popup__input_field_description"
               placeholder="Исследователь океана"
               name="description"
               type="text"
-              id="description"
+              id="description-input"
+              minlength="2"
+              maxlength="40"
               required
             />
+            <span class="popup__error description-input-error"></span>
             <button class="popup__save-button" type="submit">Сохранить</button>
           </form>
         </div>
@@ -66,24 +78,34 @@
       <div class="popup popup_type_new-card">
         <div class="popup__container popup__container_type_all">
           <button class="popup__close" type="submit"></button>
-          <form class="popup__form-place" name="place" action="#" method="get">
+          <form
+            class="popup__form popup__form-place"
+            name="place"
+            action="#"
+            method="get"
+            novalidate
+          >
             <h2 class="popup__form-title">Новое место</h2>
             <input
               class="popup__input popup__input_field_place"
               placeholder="Название"
               name="place"
               type="text"
-              id="place"
+              id="place-input"
+              minlength="2"
+              maxlength="40"
               required
             />
+            <span class="popup__error place-input-error"></span>
             <input
               class="popup__input popup__input_field_link"
               placeholder="Ссылка на картинку"
               name="link"
-              type="text"
-              id="link"
+              type="url"
+              id="link-input"
               required
             />
+            <span class="popup__error link-input-error"></span>
             <button class="popup__save-button" type="submit">Сохранить</button>
           </form>
         </div>
