@@ -119,22 +119,6 @@ buttonAvatarEdit.addEventListener("click", function () {
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileSubtitle.textContent;
 });
-// Функция дбавления 
-// function handleFormSubmitAvatar(evt) {
-//   evt.preventDefault();
-//   renderLoading(true, submitPopupButton);
-//   addAvatar(linkInputAvatar.value)
-//     .then((res) => {
-//       (profileAvatar.src = res.avatar), evt.target.reset();
-//       closePopup(popupEditAvatar);
-//     })
-//     .catch((err) => {
-//       console.log(`Ошибка: ${err}`);
-//     })
-//     .finally(() => {
-//       renderLoading(false, submitPopupButton);
-//     });
-// }
 profileForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   renderLoading(true, buttonSaveProfile);
