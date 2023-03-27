@@ -5,4 +5,5 @@
   overflow: hidden;
   width: 282px;
   position: relative;
+  object-fit: contain;
 }

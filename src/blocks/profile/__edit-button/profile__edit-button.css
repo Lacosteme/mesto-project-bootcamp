@@ -7,7 +7,7 @@
   border: 1px solid #fff;
   background-color: transparent;
   transition: 0.3s;
-  background-size: 10px;
+  background-size: 10px;  
 }
 
 .profile__edit-button:hover {
