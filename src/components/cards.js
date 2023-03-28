@@ -98,8 +98,8 @@ export function handleSubmitCard(evt) {
   })
     .then((res) => {
       renderCard(res);
-      evt.target.reset();
       closePopup(placeForm);
+      evt.target.reset();
     })
     .catch((err) => {
       console.log(`Ошибка: ${err}`);

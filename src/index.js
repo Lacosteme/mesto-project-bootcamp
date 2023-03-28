@@ -70,7 +70,7 @@ Promise.all([getProfile(), getCards()])
     profileAvatar.src = userData.avatar;
     nameInput.value = userData.name;
     jobInput.value = userData.about;
-    cardsData.forEach(renderCard);
+    cardsData.reverse().forEach(renderCard);
   })
   .catch((err) => {
     console.log(`Возникла ошибка: ${err}`);
@@ -102,23 +102,13 @@ function openProfile() {
 buttonOpenEditProfile.addEventListener("click", () =>
   openProfile(popupEditProfile)
 );
-buttonCloseEditProfilePopup.addEventListener("click", () =>
-  closePopup(popupEditProfile)
-);
+
 buttonOpenNewCard.addEventListener("click", () => openPopup(popupAddNewCard));
-buttonCloseNewCardPopup.addEventListener("click", () =>
-  closePopup(popupAddNewCard)
-);
-buttonCloseViewImagePopup.addEventListener("click", () =>
-  closePopup(popupViewImage)
-);
+
 formElement.addEventListener("submit", handleFormSubmit);
 formNewPlace.addEventListener("submit", handleSubmitCard);
-buttonAvatarEdit.addEventListener("click", function () {
-  openPopup(popupEditAvatar);
-  nameInput.value = profileTitle.textContent;
-  jobInput.value = profileSubtitle.textContent;
-});
+buttonAvatarEdit.addEventListener("click",  () => openPopup(popupEditAvatar)); 
+
 profileForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   renderLoading(true, buttonSaveProfile);
@@ -141,7 +131,8 @@ popupFormAvatar.addEventListener("submit", function (evt) {
   renderLoading(true, submitPopupButton);
   addAvatar(linkInputAvatar.value)
     .then((res) => {
-      (profileAvatar.src = res.avatar), evt.target.reset();
+      profileAvatar.src = res.avatar;
+      evt.target.reset();
       closePopup(popupEditAvatar);
     })
     .catch((err) => {
